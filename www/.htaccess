@@ -1,0 +1,6 @@
+SetEnv PHP_VER 5_4
+RewriteEngine On # Turn on the rewriting engine
+RewriteRule ^e/([A-Za-z0-9.]+)/$ index.php?mvc_package=$1 [L] #package
+RewriteRule ^e/([A-Za-z0-9.]+)/([A-Za-z0-9.]+)/$ index.php?mvc_package=$1&mvc_controleur=$2 [L] #package/controleur/
+RewriteRule ^e/([A-Za-z0-9.]+)/([A-Za-z0-9.]+)/([A-Za-z0-9.]+)/$ index.php?mvc_package=$1&mvc_controleur=$2&mvc_action=$3 [L] #package/controleur/action
+RewriteRule ^e/([A-Za-z0-9.]+)/([A-Za-z0-9.]+)/([A-Za-z0-9.]+)/_param_([A-Za-z0-9.&_=]+)$ index.php?mvc_package=$1&mvc_controleur=$2&mvc_action=$3$4 [L] #package/controleur/action/_param_
